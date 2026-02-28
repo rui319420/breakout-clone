@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    environment:
+      - DISPLAY=${DISPLAY}
+    network_mode: "host"
+    volumes:
+      - .:/app
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /mnt/wslg:/mnt/wslg
+    command: /bin/bash
